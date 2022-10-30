@@ -96,9 +96,9 @@ class _IntroPageState extends State<IntroPage> {
           const SizedBox(
             height: 30,
           ),
-          const Text(
-            'Get the most out of Flutter',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+          Text(
+            data[0]['fields']['section_title'],
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
           ),
           const SizedBox(
             height: 15,
