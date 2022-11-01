@@ -60,11 +60,11 @@ class _IntroPageState extends State<IntroPage> {
                       Colors.black.withOpacity(0.6), BlendMode.darken),
                 )),
             child: Column(
-              children: const [
-                SizedBox(
+              children: [
+                const SizedBox(
                   height: 50,
                 ),
-                ListTile(
+                const ListTile(
                   leading: FlutterLogo(
                     size: 40,
                   ),
@@ -76,18 +76,18 @@ class _IntroPageState extends State<IntroPage> {
                         fontSize: 30),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Center(
                   child: Text(
-                    'Answers to your most common Flutter\n questions',
+                    data[0]['fields']['hero_title'],
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 30),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
               ],
