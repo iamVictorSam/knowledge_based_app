@@ -54,8 +54,7 @@ class _IntroPageState extends State<IntroPage> {
             decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.3),
                 image: DecorationImage(
-                  image: const NetworkImage(
-                      'https://res.cloudinary.com/iamvictorsam/image/upload/v1675709306/image_d27rcg.png'),
+                  image: NetworkImage(data[0]['fields']['hero_image']),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.6), BlendMode.darken),
