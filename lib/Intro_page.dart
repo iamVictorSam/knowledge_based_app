@@ -18,10 +18,10 @@ class _IntroPageState extends State<IntroPage> {
 
   bool isLoading = true;
 
-  Future retrieveHowTo() async {
+  Future retrieveIntroPage() async {
     try {
       final url = Uri.parse(
-          "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
+          "https://api.buttercms.com/v2/pages/intro/intro?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
       final response = await http.get(url);
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
@@ -39,7 +39,7 @@ class _IntroPageState extends State<IntroPage> {
   @override
   void initState() {
     super.initState();
-    retrieveHowTo();
+    retrieveIntroPage();
   }
 
   @override
