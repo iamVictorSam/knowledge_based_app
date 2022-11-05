@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:knowledge_based_app/home.dart';
+import 'package:http/http.dart' as http;
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -10,6 +13,34 @@ class IntroPage extends StatefulWidget {
 
 class _IntroPageState extends State<IntroPage> {
   // https://api.buttercms.com/v2/pages/intro/intro?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab
+
+  List data = [];
+
+  bool isLoading = true;
+
+  Future retrieveHowTo() async {
+    try {
+      final url = Uri.parse(
+          "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        var result = jsonDecode(response.body);
+        setState(() {
+          data = result['data'] as List;
+          isLoading = false;
+        });
+        return result;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    retrieveHowTo();
+  }
 
   @override
   Widget build(BuildContext context) {
