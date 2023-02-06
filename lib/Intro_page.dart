@@ -7,8 +7,7 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Column(
+      body: Column(
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.33,
@@ -25,7 +24,7 @@ class IntroPage extends StatelessWidget {
             child: Column(
               children: const [
                 SizedBox(
-                  height: 10,
+                  height: 50,
                 ),
                 ListTile(
                   leading: FlutterLogo(
@@ -51,13 +50,13 @@ class IntroPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
               ],
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 30,
           ),
           const Text(
             'Get the most out of Flutter',
@@ -69,13 +68,13 @@ class IntroPage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              'Articles to help get you started with Flutter: How To\'s,  Modeling Basics, FAQs, and more..',
+              'Articles to help get you started with Flutter: How To\'s,  Basics, FAQs, and more..',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.black87, fontSize: 18),
             ),
           ),
           const SizedBox(
-            height: 25,
+            height: 50,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -117,7 +116,7 @@ class IntroPage extends StatelessWidget {
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }

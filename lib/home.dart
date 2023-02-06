@@ -102,11 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             data[0]['fields']['title'],
                             style: const TextStyle(
-                              color: Colors.grey,
-                              fontSize: 17,
+                              color: Color.fromARGB(255, 84, 83, 83),
+                              fontSize: 18,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 15),
                           ...List.generate(data[0]['fields']['body'].length,
                               (index) {
                             var resp = data[0]['fields']['body'][index];

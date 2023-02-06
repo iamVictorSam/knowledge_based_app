@@ -23,59 +23,55 @@ class CustomCard extends StatelessWidget {
           MaterialPageRoute(builder: (context) => HowToScreen(data: resp))),
       child: Card(
         color: Colors.black,
-        child: Container(
-          decoration:
-              BoxDecoration(border: Border.all(color: Colors.grey[350]!)),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Container(
-              //   height: 180,
-              //   width: 120,
-              //   decoration: const BoxDecoration(),
-              //   child: const FlutterLogo(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Container(
+            //   height: 180,
+            //   width: 120,
+            //   decoration: const BoxDecoration(),
+            //   child: const FlutterLogo(),
+            // ),
+            ListTile(
+              title: Text(
+                'On: $customDate',
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 13,
+                ),
+              ),
+              trailing: Text(
+                'By: $answeredBy',
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 13,
+                ),
+              ),
+              // isThreeLine: true,
+              // subtitle: Text(
+              //   question,
+              //   style: const TextStyle(
+              //     fontSize: 20,
+              //     color: Color(0xffFCF7F8),
+              //     fontWeight: FontWeight.bold,
+              //   ),
               // ),
-              ListTile(
-                title: Text(
-                  'On: $customDate',
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 13,
-                  ),
-                ),
-                trailing: Text(
-                  'By: $answeredBy',
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 13,
-                  ),
-                ),
-                // isThreeLine: true,
-                // subtitle: Text(
-                //   question,
-                //   style: const TextStyle(
-                //     fontSize: 20,
-                //     color: Color(0xffFCF7F8),
-                //     fontWeight: FontWeight.bold,
-                //   ),
-                // ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                child: Text(
-                  question,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Color(0xffFCF7F8),
-                    fontWeight: FontWeight.bold,
-                  ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Text(
+                question,
+                style: const TextStyle(
+                  fontSize: 20,
+                  color: Color(0xffFCF7F8),
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+          ],
         ),
       ),
     );
