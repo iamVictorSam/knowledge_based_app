@@ -99,7 +99,7 @@ class IntroPage extends StatelessWidget {
                       ]),
                       const SizedBox(height: 20),
                       const Text(
-                        'How to use Jexxi to install packages, use packages, write efficient flutter codes ... and more!',
+                        'How to use the Flutter cli to install packages, use packages, write efficient flutter codes ... and more!',
                         style: TextStyle(color: Colors.black87, fontSize: 18),
                       ),
                     ],
