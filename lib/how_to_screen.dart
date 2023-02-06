@@ -8,6 +8,8 @@ class HowToScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final customDate = data['answered_on'].toString().substring(0, 10);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('How To'),
@@ -29,7 +31,7 @@ class HowToScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               subtitle: Text(
-                'Answered on: ${data['answered_on']}',
+                'Answered on: $customDate',
                 style: const TextStyle(
                   color: Colors.grey,
                   fontSize: 14,

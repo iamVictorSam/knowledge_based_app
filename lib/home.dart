@@ -43,80 +43,78 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffFCF7F8),
       appBar: AppBar(
-        title: const Text('Knowledge Base App'),
-        centerTitle: true,
+        title: Text(
+          data[0]['name'],
+          style: const TextStyle(
+              fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ),
+      backgroundColor: const Color(0xffFCF7F8),
       body: isLoading == true
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : SingleChildScrollView(
-              child: data.isEmpty
-                  ? const Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'No Answers here',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    )
-                  : Column(
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            showSearch(
-                                context: context,
-                                // delegate to customize the search bar
-                                delegate: SearchScreen(
-                                    data: data[0]['fields']['body']));
-                          },
-                          child: const CircleAvatar(
-                            radius: 55,
-                            child: Icon(
-                              Icons.search,
-                              size: 70,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          data[0]['name'],
-                          style: const TextStyle(
+          : SafeArea(
+              child: SingleChildScrollView(
+                child: data.isEmpty
+                    ? const Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'No Answers here',
+                          style: TextStyle(
                               fontSize: 22,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(height: 5),
-                        Text(
-                          data[0]['fields']['title'],
-                          style: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 17,
+                      )
+                    : Column(
+                        children: [
+                          const SizedBox(
+                            height: 20,
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        ...List.generate(data[0]['fields']['body'].length,
-                            (index) {
-                          var resp = data[0]['fields']['body'][index];
-                          String dateString = resp['answered_on'];
-                          DateTime date = DateTime.parse(dateString);
+                          GestureDetector(
+                            onTap: () {
+                              showSearch(
+                                  context: context,
+                                  // delegate to customize the search bar
+                                  delegate: SearchScreen(
+                                      data: data[0]['fields']['body']));
+                            },
+                            child: const CircleAvatar(
+                              radius: 55,
+                              child: Icon(
+                                Icons.search,
+                                size: 70,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          const SizedBox(height: 5),
+                          Text(
+                            data[0]['fields']['title'],
+                            style: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 17,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          ...List.generate(data[0]['fields']['body'].length,
+                              (index) {
+                            var resp = data[0]['fields']['body'][index];
+                            String dateString = resp['answered_on'];
+                            DateTime date = DateTime.parse(dateString);
 
-                          return CustomCard(
-                            resp: resp,
-                            answeredBy: resp['answered_by'],
-                            question: resp['question'],
-                            date: date,
-                          );
-                        })
-                      ],
-                    ),
+                            return CustomCard(
+                              resp: resp,
+                              answeredBy: resp['answered_by'],
+                              question: resp['question'],
+                              date: date,
+                            );
+                          })
+                        ],
+                      ),
+              ),
             ),
     );
   }
