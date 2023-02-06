@@ -13,7 +13,15 @@ class IntroPage extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height * 0.33,
             width: double.maxFinite,
-            color: Colors.black,
+            decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.3),
+                image: DecorationImage(
+                  image: const NetworkImage(
+                      'https://res.cloudinary.com/iamvictorsam/image/upload/v1675709306/image_d27rcg.png'),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.6), BlendMode.darken),
+                )),
             child: Column(
               children: const [
                 SizedBox(

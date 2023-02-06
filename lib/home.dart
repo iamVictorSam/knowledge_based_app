@@ -43,13 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          data[0]['name'],
-          style: const TextStyle(
-              fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-      ),
       backgroundColor: const Color(0xffFCF7F8),
       body: isLoading == true
           ? const Center(
@@ -70,6 +63,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Column(
                         children: [
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  icon: const Icon(
+                                      Icons.arrow_back_ios_new_rounded)),
+                              Text(
+                                data[0]['name'],
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
