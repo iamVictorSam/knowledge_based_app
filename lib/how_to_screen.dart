@@ -9,7 +9,6 @@ class HowToScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final customDate = data['answered_on'].toString().substring(0, 10);
-    print(data['answer']);
 
     return Scaffold(
       appBar: AppBar(

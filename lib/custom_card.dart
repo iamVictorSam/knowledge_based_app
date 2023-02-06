@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'how_to_screen.dart';
 
 class CustomCard extends StatelessWidget {
@@ -26,12 +25,6 @@ class CustomCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Container(
-            //   height: 180,
-            //   width: 120,
-            //   decoration: const BoxDecoration(),
-            //   child: const FlutterLogo(),
-            // ),
             ListTile(
               title: Text(
                 'On: $customDate',
@@ -47,15 +40,6 @@ class CustomCard extends StatelessWidget {
                   fontSize: 13,
                 ),
               ),
-              // isThreeLine: true,
-              // subtitle: Text(
-              //   question,
-              //   style: const TextStyle(
-              //     fontSize: 20,
-              //     color: Color(0xffFCF7F8),
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              // ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
