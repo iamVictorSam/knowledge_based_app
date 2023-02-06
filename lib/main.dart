@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:knowledge_based_app/home.dart';
+import 'package:knowledge_based_app/Intro_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.teal,
       ),
-      home: const HomeScreen(),
+      home: const IntroPage(),
     );
   }
 }
