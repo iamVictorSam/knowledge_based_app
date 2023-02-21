@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:knowledge_based_app/home.dart';
 
-class IntroPage extends StatelessWidget {
+class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
+
+  @override
+  State<IntroPage> createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage> {
+  // https://api.buttercms.com/v2/pages/intro/intro?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab
 
   @override
   Widget build(BuildContext context) {
