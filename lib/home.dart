@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future retrieveHowTo() async {
     try {
       final url = Uri.parse(
-          "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=f957583e47b4abfd32e8921ff0987b6dbb0ce389");
+          "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
       final response = await http.get(url);
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
