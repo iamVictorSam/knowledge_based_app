@@ -9,8 +9,6 @@ class HowToScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final customDate = data['answered_on'].toString().substring(0, 10);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('How To'),
