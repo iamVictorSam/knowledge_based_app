@@ -64,21 +64,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Column(
                         children: [
-                          // Row(
-                          //   children: [
-                          //     IconButton(
-                          //         onPressed: () => Navigator.pop(context),
-                          //         icon: const Icon(
-                          //             Icons.arrow_back_ios_new_rounded)),
-                          //     Text(
-                          //       data[0]['name'],
-                          //       style: const TextStyle(
-                          //           fontSize: 22,
-                          //           color: Colors.black,
-                          //           fontWeight: FontWeight.bold),
-                          //     ),
-                          //   ],
-                          // ),
+                          Row(
+                            children: [
+                              IconButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  icon: const Icon(
+                                      Icons.arrow_back_ios_new_rounded)),
+                              const Text(
+                                'How To',
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                           const SizedBox(
                             height: 20,
                           ),
@@ -99,13 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           const SizedBox(height: 20),
                           const SizedBox(height: 5),
-                          // Text(
-                          //   data[0]['fields']['title'],
-                          //   style: const TextStyle(
-                          //     color: Color.fromARGB(255, 84, 83, 83),
-                          //     fontSize: 18,
-                          //   ),
-                          // ),
+                          const Text(
+                            'Frequently asked How To(s) in Flutter',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 84, 83, 83),
+                              fontSize: 18,
+                            ),
+                          ),
                           const SizedBox(height: 15),
                           ...List.generate(data.length, (index) {
                             var resp = data[index]['fields'];
