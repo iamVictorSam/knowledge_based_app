@@ -8,7 +8,7 @@ class HowToScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final customDate = data['answered_on'].toString().substring(0, 10);
+    // final customDate = data['answered_on'].toString().substring(0, 10);
 
     return Scaffold(
       appBar: AppBar(
@@ -24,23 +24,23 @@ class HowToScreen extends StatelessWidget {
             const SizedBox(height: 10),
             ListTile(
               title: Text(
-                data['question'],
+                data['howto_title'],
                 style: const TextStyle(
                     fontSize: 30,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(
-                'Answered on: $customDate',
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 17,
-                ),
-              ),
+              // subtitle: Text(
+              //   'Answered on: $customDate',
+              //   style: const TextStyle(
+              //     color: Colors.grey,
+              //     fontSize: 17,
+              //   ),
+              // ),
             ),
             Html(
               data: """
-                ${data['answer']}
+                ${data['howto_body']}
                 """,
               style: {
                 'p': Style(fontSize: FontSize.em(1.4)),
@@ -50,9 +50,9 @@ class HowToScreen extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            Text(
-              'Answered by: ${data['answered_by']}',
-              style: const TextStyle(
+            const Text(
+              'By Team Flutter',
+              style: TextStyle(
                 color: Colors.grey,
                 fontSize: 17,
               ),

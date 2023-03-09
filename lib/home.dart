@@ -18,10 +18,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future retrieveHowTo() async {
     try {
+      // final url = Uri.parse(
+      //     "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
+
+      //5b401ef0567ef2085368bf67a20bd1bd96c99098
       final url = Uri.parse(
-          "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
+          "https://api.buttercms.com/v2/pages/flutter_how_to/?auth_token=5b401ef0567ef2085368bf67a20bd1bd96c99098");
       final response = await http.get(url);
       if (response.statusCode == 200) {
+        print(response);
         var result = jsonDecode(response.body);
         setState(() {
           data = result['data'] as List;
@@ -63,21 +68,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : Column(
                         children: [
-                          Row(
-                            children: [
-                              IconButton(
-                                  onPressed: () => Navigator.pop(context),
-                                  icon: const Icon(
-                                      Icons.arrow_back_ios_new_rounded)),
-                              Text(
-                                data[0]['name'],
-                                style: const TextStyle(
-                                    fontSize: 22,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
+                          // Row(
+                          //   children: [
+                          //     IconButton(
+                          //         onPressed: () => Navigator.pop(context),
+                          //         icon: const Icon(
+                          //             Icons.arrow_back_ios_new_rounded)),
+                          //     Text(
+                          //       data[0]['name'],
+                          //       style: const TextStyle(
+                          //           fontSize: 22,
+                          //           color: Colors.black,
+                          //           fontWeight: FontWeight.bold),
+                          //     ),
+                          //   ],
+                          // ),
                           const SizedBox(
                             height: 20,
                           ),
@@ -86,8 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               showSearch(
                                   context: context,
                                   // delegate to customize the search bar
-                                  delegate: SearchScreen(
-                                      data: data[0]['fields']['body']));
+                                  delegate: SearchScreen(data: data));
                             },
                             child: const CircleAvatar(
                               radius: 55,
@@ -99,25 +103,26 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           const SizedBox(height: 20),
                           const SizedBox(height: 5),
-                          Text(
-                            data[0]['fields']['title'],
-                            style: const TextStyle(
-                              color: Color.fromARGB(255, 84, 83, 83),
-                              fontSize: 18,
-                            ),
-                          ),
+                          // Text(
+                          //   data[0]['fields']['title'],
+                          //   style: const TextStyle(
+                          //     color: Color.fromARGB(255, 84, 83, 83),
+                          //     fontSize: 18,
+                          //   ),
+                          // ),
                           const SizedBox(height: 15),
-                          ...List.generate(data[0]['fields']['body'].length,
-                              (index) {
-                            var resp = data[0]['fields']['body'][index];
-                            String dateString = resp['answered_on'];
-                            DateTime date = DateTime.parse(dateString);
+                          ...List.generate(data.length, (index) {
+                            var resp = data[index]['fields'];
+                            print(resp);
+                            // String dateString = resp['answered_on'];
+                            // DateTime date = DateTime.parse(dateString);
 
                             return CustomCard(
                               resp: resp,
-                              answeredBy: resp['answered_by'],
-                              question: resp['question'],
-                              date: date,
+                              // answeredBy: resp['answered_by'],
+                              question: resp['howto_title'],
+                              // question: resp['question'],
+                              // date: date,
                             );
                           })
                         ],

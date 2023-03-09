@@ -33,7 +33,7 @@ class SearchScreen extends SearchDelegate {
     List<dynamic> matchQuery = [];
 
     for (var item in data) {
-      var value = item['question'].toString().toLowerCase();
+      var value = item['fields']['howto_title'].toString().toLowerCase();
 
       if (value.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(item);
@@ -45,14 +45,14 @@ class SearchScreen extends SearchDelegate {
       itemBuilder: (context, index) {
         var result = matchQuery[index];
 
-        String dateString = result['answered_on'];
-        DateTime date = DateTime.parse(dateString);
+        // String dateString = result['answered_on'];
+        // DateTime date = DateTime.parse(dateString);
 
         return CustomCard(
           resp: result,
-          answeredBy: result['answered_by'],
-          question: result['question'],
-          date: date,
+          // answeredBy: result['answered_by'],
+          question: result['fields']['howto_title'],
+          // date: date,
         );
       },
     );
@@ -63,7 +63,7 @@ class SearchScreen extends SearchDelegate {
     List<dynamic> matchQuery = [];
 
     for (var item in data) {
-      var value = item['question'].toString().toLowerCase();
+      var value = item['fields']['howto_title'].toString().toLowerCase();
 
       if (value.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(item);
@@ -75,14 +75,14 @@ class SearchScreen extends SearchDelegate {
       itemBuilder: (context, index) {
         var result = matchQuery[index];
 
-        String dateString = result['answered_on'];
-        DateTime date = DateTime.parse(dateString);
+        // String dateString = result['answered_on'];
+        // DateTime date = DateTime.parse(dateString);
 
         return CustomCard(
           resp: result,
-          answeredBy: result['answered_by'],
-          question: result['question'],
-          date: date,
+          // answeredBy: result['answered_by'],
+          question: result['fields']['howto_title'],
+          // date: date,
         );
       },
     );

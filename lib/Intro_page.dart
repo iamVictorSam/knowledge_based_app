@@ -18,14 +18,15 @@ class _IntroPageState extends State<IntroPage> {
   Future retrieveIntroPage() async {
     try {
       final url = Uri.parse(
-          "https://api.buttercms.com/v2/pages/intro/intro-page?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
+          "https://api.buttercms.com/v2/pages/home_page/?auth_token=5b401ef0567ef2085368bf67a20bd1bd96c99098");
       final response = await http.get(url);
       if (response.statusCode == 200) {
         var result = jsonDecode(response.body);
         setState(() {
-          data.add(result['data']);
+          data = result['data'];
           print(data);
           isLoading = false;
+          print(data);
         });
         return result;
       }
