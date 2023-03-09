@@ -15,7 +15,7 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final customDate = date.toString().substring(0, 10) ?? '';
+    final customDate = date.toString().substring(0, 10);
     return InkWell(
       onTap: () => Navigator.push(context,
           MaterialPageRoute(builder: (context) => HowToScreen(data: resp))),
