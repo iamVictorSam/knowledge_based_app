@@ -18,10 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future retrieveHowTo() async {
     try {
-      // final url = Uri.parse(
-      //     "https://api.buttercms.com/v2/pages/knowledge_base/?auth_token=468dba86d8c24c33ee6b65bfb5939f1b91a75fab");
-
-      //5b401ef0567ef2085368bf67a20bd1bd96c99098
       final url = Uri.parse(
           "https://api.buttercms.com/v2/pages/flutter_how_to/?auth_token=5b401ef0567ef2085368bf67a20bd1bd96c99098");
       final response = await http.get(url);
@@ -120,9 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                             return CustomCard(
                               resp: resp,
-                              // answeredBy: resp['answered_by'],
                               question: resp['howto_title'],
-                              // question: resp['question'],
                               date: date,
                             );
                           })

@@ -45,14 +45,12 @@ class SearchScreen extends SearchDelegate {
       itemBuilder: (context, index) {
         var result = matchQuery[index];
 
-        // String dateString = data['updated'];
         String dateString = data[index]['updated'];
 
         DateTime date = DateTime.parse(dateString);
 
         return CustomCard(
           resp: result,
-          // answeredBy: result['answered_by'],
           question: result['fields']['howto_title'],
           date: date,
         );
