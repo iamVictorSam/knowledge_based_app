@@ -26,7 +26,7 @@ class CustomCard extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                customDate,
+                'On $customDate',
                 style: const TextStyle(
                   color: Colors.grey,
                   fontSize: 13,
