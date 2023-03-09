@@ -114,15 +114,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           ...List.generate(data.length, (index) {
                             var resp = data[index]['fields'];
                             print(resp);
-                            // String dateString = resp['answered_on'];
-                            // DateTime date = DateTime.parse(dateString);
+                            String dateString = data[index]['updated'];
+                            DateTime date = DateTime.parse(dateString);
+                            print(date);
 
                             return CustomCard(
                               resp: resp,
                               // answeredBy: resp['answered_by'],
                               question: resp['howto_title'],
                               // question: resp['question'],
-                              // date: date,
+                              date: date,
                             );
                           })
                         ],
