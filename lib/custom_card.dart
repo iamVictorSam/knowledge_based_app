@@ -4,19 +4,18 @@ import 'how_to_screen.dart';
 class CustomCard extends StatelessWidget {
   const CustomCard({
     Key? key,
-    required this.date,
-    required this.answeredBy,
+    // required this.date,
     required this.question,
     this.resp,
   }) : super(key: key);
 
-  final String answeredBy, question;
-  final DateTime date;
+  final String question;
+  // final DateTime date;
   final resp;
 
   @override
   Widget build(BuildContext context) {
-    final customDate = date.toString().substring(0, 10);
+    // final customDate = date.toString().substring(0, 10);
     return InkWell(
       onTap: () => Navigator.push(context,
           MaterialPageRoute(builder: (context) => HowToScreen(data: resp))),
@@ -25,17 +24,17 @@ class CustomCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              title: Text(
-                'On: $customDate',
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 13,
-                ),
-              ),
+            const ListTile(
+              // title: Text(
+              //   'On: $customDate',
+              //   style: const TextStyle(
+              //     color: Colors.grey,
+              //     fontSize: 13,
+              //   ),
+              // ),
               trailing: Text(
-                'By: $answeredBy',
-                style: const TextStyle(
+                'By: Team Flutter',
+                style: TextStyle(
                   color: Colors.grey,
                   fontSize: 13,
                 ),
