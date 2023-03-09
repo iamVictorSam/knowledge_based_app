@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class HowToScreen extends StatelessWidget {
-  const HowToScreen({super.key, required this.data});
+  const HowToScreen({super.key, required this.data, required this.date});
 
   final Map<String, dynamic> data;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +31,13 @@ class HowToScreen extends StatelessWidget {
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
-              // subtitle: Text(
-              //   'Answered on: $customDate',
-              //   style: const TextStyle(
-              //     color: Colors.grey,
-              //     fontSize: 17,
-              //   ),
-              // ),
+              subtitle: Text(
+                'Answered on: $date',
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 17,
+                ),
+              ),
             ),
             Html(
               data: """

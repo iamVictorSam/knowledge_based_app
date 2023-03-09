@@ -17,8 +17,13 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final customDate = date.toString().substring(0, 10);
     return InkWell(
-      onTap: () => Navigator.push(context,
-          MaterialPageRoute(builder: (context) => HowToScreen(data: resp))),
+      onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HowToScreen(
+                    data: resp,
+                    date: customDate,
+                  ))),
       child: Card(
         color: Colors.black,
         child: Column(
