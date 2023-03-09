@@ -86,7 +86,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             onTap: () {
                               showSearch(
                                   context: context,
-                                  // delegate to customize the search bar
                                   delegate: SearchScreen(data: data));
                             },
                             child: const CircleAvatar(
