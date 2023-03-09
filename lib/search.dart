@@ -43,7 +43,7 @@ class SearchScreen extends SearchDelegate {
     return ListView.builder(
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
-        var result = matchQuery[index];
+        var result = matchQuery[index]['fields'];
 
         String dateString = data[index]['updated'];
 
@@ -51,7 +51,7 @@ class SearchScreen extends SearchDelegate {
 
         return CustomCard(
           resp: result,
-          question: result['fields']['howto_title'],
+          question: result['howto_title'],
           date: date,
         );
       },
@@ -73,14 +73,14 @@ class SearchScreen extends SearchDelegate {
     return ListView.builder(
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
-        var result = matchQuery[index];
+        var result = matchQuery[index]['fields'];
 
         String dateString = data[index]['updated'];
         DateTime date = DateTime.parse(dateString);
 
         return CustomCard(
           resp: result,
-          question: result['fields']['howto_title'],
+          question: result['howto_title'],
           date: date,
         );
       },
