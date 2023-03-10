@@ -24,9 +24,7 @@ class _IntroPageState extends State<IntroPage> {
         var result = jsonDecode(response.body);
         setState(() {
           data = result['data'];
-          print(data);
           isLoading = false;
-          print(data);
         });
         return result;
       }
